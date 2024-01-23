@@ -58,7 +58,7 @@ class Password_Generator:
             password = "".join(random.sample(self.string_all, self.length))
         return password
     
-    def generate(self,e):
+    def generate(self):
 
         if self.add_number==True and self.add_symbol==True:
             psd=self.psd_with_all_possibilities()
@@ -107,7 +107,7 @@ def main(page):
             if letter==False:
                 page.clean()
                 # print('checked out')
-                password_generator=Password_Generator(page,length.value, numbers.value, symbols.value).generate(e)
+                password_generator=Password_Generator(page,length.value, numbers.value, symbols.value).generate()
                 txt_number = ft.Text(value=password_generator,size=35, text_align=ft.TextAlign.CENTER, width=500,bgcolor=ft.colors.GREEN,weight=ft.FontWeight.NORMAL)
                 # page.add()
                 return_btn=ft.ElevatedButton(text="Go back",on_click=home)
